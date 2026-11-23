@@ -1,0 +1,43 @@
+name: Bug report
+description: A formatter result, error message, or page behavior that is wrong
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened
+      description: Describe the result you saw. Do not paste secrets or personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: A small sample
+      description: A shortened JSON or text sample that reproduces the bug, with any private values replaced.
+      render: text
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - JSON beautify or minify
+        - Repair or unescape
+        - Validation message
+        - Tree view
+        - Text tools
+        - Theme, storage, or import
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: Chrome 131 on macOS

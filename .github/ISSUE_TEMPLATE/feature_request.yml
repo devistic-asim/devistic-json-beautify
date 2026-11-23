@@ -1,0 +1,25 @@
+name: Feature request
+description: A capability that would make the formatter more useful
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do with JSON or text that the page does not handle well?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How should it behave, including what the page should tell the user?
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Example input
+      description: Optional sample with private values removed.
+      render: text
