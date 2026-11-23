@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Devistic JSON Beautify</title>
+    <meta
+      name="description"
+      content="Free, private JSON and text formatter. Beautify, minify, repair, and explore JSON in your browser. Nothing is uploaded."
+    />
+    <meta name="theme-color" content="#F5F9FC" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%apple-touch-icon.png" />
+    <script>
+      (function () {
+        try {
+          var choice = localStorage.getItem("devistic-json-beautify-theme") || "system";
+          var dark =
+            choice === "dark" ||
+            (choice !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          var root = document.documentElement;
+          root.setAttribute("data-theme", dark ? "dark" : "light");
+          root.setAttribute("data-theme-choice", choice);
+          root.style.colorScheme = dark ? "dark" : "light";
+          var theme = document.querySelector('meta[name="theme-color"]');
+          if (theme) theme.setAttribute("content", dark ? "#0B1220" : "#F5F9FC");
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Devistic JSON Beautify needs JavaScript. It still runs entirely in your browser.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
